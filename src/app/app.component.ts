@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'root-component',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myangular2app';
+  ComponentTitle: string = "Angular"; 
+  FontColor: string = "panel-heading-custom";
+  CurrentDate:Date=new Date();
 }

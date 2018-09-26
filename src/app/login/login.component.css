@@ -1,0 +1,10 @@
+.loginForm body {
+    background:#333;
+}
+/* .loginForm .form_bg {
+     width: 300px;
+    height: 300px; 
+} */
+.loginForm .align-center {
+    text-align:center;
+}

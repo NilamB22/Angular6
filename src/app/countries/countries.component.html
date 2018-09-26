@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">Country Parent Component</h3>
+    </div>
+    <div class="panel-body">
+      Select Country :
+      <select [(ngModel)]="selectedCountry">
+        <option *ngFor="let country of countries" value={{country}} >
+          {{country | filter:'A'}}
+        </option>
+      </select>
+      <br /> <br />
+      Selected City For {{selectedCountry}} : <b>{{selectedCity}}</b>
+      <br /> <br />
+      <cities-component Country="{{selectedCountry}}" (cityNotification)="getSelectedCity($event)">
+      </cities-component>
+    </div>
+  </div>
+</div>
