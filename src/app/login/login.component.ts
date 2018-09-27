@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
    * validateLogin : check user valid or not
    */
   public validateLogin(loginData): void {
-    if (loginData.UserName == 'nilam' && loginData.Password == 'test@123') {
+    if (loginData.UserName == 'test' && loginData.Password == 'test') {
       this.bgcolor = 'green';
     }
     else {

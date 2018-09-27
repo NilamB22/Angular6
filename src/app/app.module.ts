@@ -15,6 +15,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 import { CanDeactivateGuardService } from './can-deactivate-guard.service';
 import { DialogService } from './dialog.service';
+import { HttpModule } from '@angular/http';
+import { SearchDataComponent } from './search-data/search-data.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,12 +29,14 @@ import { DialogService } from './dialog.service';
     CitiesComponent,
     FilterPipe,
     ServerCommunicationComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    SearchDataComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-   routes
+   routes,
+   HttpModule
   ],
   providers: [
       MyService,

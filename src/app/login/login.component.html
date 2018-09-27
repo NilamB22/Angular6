@@ -14,7 +14,7 @@
                           [(ngModel)] = "loginData.UserName" appValidate>
                       </div>
                       <div class="form-group">
-                          <input type="text" class="form-control" id="Password" placeholder="Password" name="Password"
+                          <input type="password" class="form-control" id="Password" placeholder="Password" name="Password"
                           [(ngModel)] = "loginData.Password" appValidate>
                       </div>
                       <br/>
@@ -24,6 +24,7 @@
                       <div class="checkbox">
                           <label><input type="checkbox" value="" id='RememberMe'  name= "RememberMe" [(ngModel)] = "loginData.RememberMe" appValidate>Remember Me</label>
                         </div>
+                        <span>[Hint:test]</span>
                   </form>
               </div>
           </div>

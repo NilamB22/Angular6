@@ -1,31 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
+import 'rxjs/Rx';
 
 
 
 @Component({
   selector: 'server-communication',
   templateUrl: './server-communication.component.html',
-  styleUrls: ['./server-communication.component.css']
+  styleUrls: ['./server-communication.component.css'],
 })
 export class ServerCommunicationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   ngOnInit() {
   }
 
-  public resultData :any[]=[];
- /**
-  * fetch data from rest api
-  */
-//  public getData():Observable<any[]> {
-   
-//    this.resultData=[1,2];
-//  // return this.http.get('http://services.groupkt.com/country/get/iso2code/IN').map({};
 
+  public resultData: any[] = [];
 
-//  }
+  /*** fetch data from rest api */
+  public getData(): void {
+
+    var observable = this.http.get('http://services.groupkt.com/country/get/all').map(
+      (response: Response) => response.json());
+
+    observable.subscribe(
+      (data) => { this.resultData = data.RestResponse.result },
+      (error) => console.log(error)
+    );
+  }
 }

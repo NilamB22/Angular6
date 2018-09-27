@@ -11,6 +11,6 @@ export class DialogService {
   // };
 
   public confirmbox(): boolean {
-    return confirm( 'Are you sure?');
+    return confirm( '[Guard] : Are you sure leave this page?');
   };
 } 
