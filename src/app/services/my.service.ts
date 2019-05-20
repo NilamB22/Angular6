@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MyService {
   public cities:string[]=[];
+  public arr;
   constructor() { }
  
 
@@ -12,7 +13,8 @@ export class MyService {
    * GetCountries
    */
   public GetCountries():string[] {
-    return["India","Usa","Australia","Argentina"];
+    this.arr = ["India","Usa","Australia","Argentina"];
+    return this.arr;
   }
 
   /**

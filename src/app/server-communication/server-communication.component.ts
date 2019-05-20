@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import {DataService} from '../services/data.service'
 import 'rxjs/Rx';
 
 
@@ -12,7 +11,9 @@ import 'rxjs/Rx';
 })
 export class ServerCommunicationComponent implements OnInit {
 
-  constructor(private http: Http) { }
+  constructor(
+    private dataService:DataService
+    ) { }
 
   ngOnInit() {
   }
@@ -22,12 +23,8 @@ export class ServerCommunicationComponent implements OnInit {
 
   /*** fetch data from rest api */
   public getData(): void {
-
-    var observable = this.http.get('http://services.groupkt.com/country/get/all').map(
-      (response: Response) => response.json());
-
-    observable.subscribe(
-      (data) => { this.resultData = data.RestResponse.result },
+      this.dataService.getDataService().subscribe(
+      (data) => { this.resultData = data['result'] },
       (error) => console.log(error)
     );
   }

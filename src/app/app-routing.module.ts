@@ -4,7 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { CountriesComponent } from './countries/countries.component';
 import { ServerCommunicationComponent } from './server-communication/server-communication.component';
-import { CanDeactivateGuardService } from './can-deactivate-guard.service';
+import { CanDeactivateGuardService } from './services/can-deactivate-guard.service';
 import { SearchDataComponent } from './search-data/search-data.component';
 
 const routes :Routes =[

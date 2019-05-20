@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable }    from 'rxjs';
-import { DialogService } from '../dialog.service';
+import { DialogService } from '../services/dialog.service';
 
 @Component({
   selector: 'login-component',
@@ -9,7 +9,7 @@ import { DialogService } from '../dialog.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _dialogService:DialogService) { }
+  constructor(public _dialogService:DialogService) { }
   ngOnInit() { }
 
   loginData: any = {};

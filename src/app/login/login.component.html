@@ -5,16 +5,16 @@
           </div>
       <div class="panel-body">
           <div class="row">
-              <div class="form_bg  col-sm-6 col-sm-offset-3" [style.background-color]="bgcolor">
+              <div class="form_bg  col-sm-6 col-sm-offset-3">
                   <form>
                        <!-- <h2 class="text-center">Login</h2> -->
                       <br/>
                       <div class="form-group">
-                          <input type="text" class="form-control" id="UserName" placeholder="User Name" name="UserName"
-                          [(ngModel)] = "loginData.UserName" appValidate>
+                          <input type="text"  [style.border-color]="bgcolor" class="form-control" id="UserName" placeholder="User Name" name="UserName"
+                          [(ngModel)] = "loginData.UserName" appValidate required>
                       </div>
                       <div class="form-group">
-                          <input type="password" class="form-control" id="Password" placeholder="Password" name="Password"
+                          <input type="password"  [style.border-color]="bgcolor" class="form-control" id="Password" placeholder="Password" name="Password"
                           [(ngModel)] = "loginData.Password" appValidate>
                       </div>
                       <br/>

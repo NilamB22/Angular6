@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
+import { DataService} from '../services/data.service'
 import 'rxjs/Rx';
 @Component({
   selector: 'search-data',
@@ -8,24 +9,22 @@ import 'rxjs/Rx';
   styleUrls: ['./search-data.component.css']
 })
 export class SearchDataComponent implements OnInit {
+  public searchResultData:  any={};
+  public country_id:string='';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http , private dataService:DataService) { }
 
   ngOnInit() {
   }
-  public searchResultData:  any[]=[];
-  public country_id:string;
+
 
  /*** fetch data by country id */
  public getSearchData(): void {
-   
-  this.searchResultData =[];
-  var observable = this.http.get('http://services.groupkt.com/country/get/iso2code/'+this.country_id).map(
-    (response: Response) => response.json());
-
-  observable.subscribe(
-    (data) => {this.searchResultData.push(data.RestResponse.result)},
+  this.country_id= this.country_id.trim();
+  this.dataService.getDataService().subscribe(
+    (data) => { this.searchResultData = data['result'] },
     (error) => console.log(error)
   );
 }
 }
+
